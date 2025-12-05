@@ -9,7 +9,8 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #fafafa;
+  background-color: #000; /* 背景黑色 */
+  color: #00ff6a; /* 全局亮綠色 */
 }
 
 .container {
@@ -19,6 +20,7 @@ body {
 
 h1 {
   margin-bottom: 10px;
+  color: #00ff6a;
 }
 
 .status {
@@ -27,6 +29,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding: 5px 10px;
+  color: #00ff6a;
 }
 
 .board {
@@ -38,24 +41,35 @@ h1 {
   margin: 20px auto;
 }
 
+/* 每格按鈕變黑底＋綠框 */
 .cell {
   width: 120px;
   height: 120px;
-  background-color: white;
-  border: 2px solid black;
-  font-size: 50px;
+  background-color: black;
+  border: 3px solid #00ff6a;
+  color: #00ff6a;
+  font-size: 60px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
 }
 
+/* hover 更亮 */
+.cell:hover {
+  border-color: #69ff9e;
+  color: #69ff9e;
+}
+
+/* 避免 disabled 太暗導致看不到 */
 .cell:disabled {
-  cursor: not-allowed;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .scoreboard {
   margin-top: 10px;
   padding: 10px;
-  border-top: 2px solid gray;
+  border-top: 2px solid #00ff6a;
+  color: #00ff6a;
 }
 
 .controls {
@@ -67,4 +81,15 @@ h1 {
   margin: 0 10px;
   font-size: 16px;
   cursor: pointer;
+
+  background-color: black;
+  border: 2px solid #00ff6a;
+  color: #00ff6a;
+  transition: 0.2s ease;
+}
+
+/* 按下去高亮 */
+.controls button:hover {
+  border-color: #69ff9e;
+  color: #69ff9e;
 }
