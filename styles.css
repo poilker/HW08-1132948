@@ -85,6 +85,50 @@ h1 {
   background-color: black;
   border: 2px solid #00ff6a;
   color: #00ff6a;
+/* 點擊時棋子縮放動畫 */
+.cell.played {
+  animation: pop 0.25s ease;
+}
+
+/* 勝利格子閃亮 */
+.cell.win {
+  animation: blink 0.6s alternate infinite;
+}
+
+/* hover發光 */
+.cell:hover {
+  border-color: #99ffcc;
+  color: #99ffcc;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ff6a;
+}
+
+/* ✨ 棋子彈跳動畫 ✨ */
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ✨ 勝利連線閃爍動畫 ✨ */
+@keyframes blink {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: rgba(0, 255, 106, 0.2);
+    box-shadow: 0 0 12px #00ff6a;
+  }
+}
+
   transition: 0.2s ease;
 }
 
